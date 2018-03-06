@@ -15,13 +15,6 @@ CREATE TABLE customer_info (
 );
 
 INSERT INTO customer_info (customer_id) VALUES
-(12345);
+(166445),(162703),(168027),(162084),(168310),(160155),(167223),(164459),(165888);
 
 SELECT * FROM customer_info;
-
--- SMS;
--- Email;
--- Telephone;
--- Post;
--- Datestamp (this should be in ISO format);
--- Customer ID (as found in the Proposals endpoint).
