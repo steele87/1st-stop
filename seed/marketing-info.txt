@@ -1,0 +1,19 @@
+DROP DATABASE
+CREATE DATABASE
+You are now connected to database "marketing_info" as user "jamessteele".
+CREATE TABLE
+INSERT 0 9
+UPDATE 1
+ id | sms | email | telephone | post |         datestamp          | customer_id 
+----+-----+-------+-----------+------+----------------------------+-------------
+  1 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      166445
+  2 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      162703
+  4 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      162084
+  5 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      168310
+  6 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      160155
+  7 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      167223
+  8 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      164459
+  9 | no  | no    | no        | no   | 2018-03-06 15:10:30.417331 |      165888
+  3 | yes | no    | yes       | no   | 2018-03-06 15:10:30.417331 |      168027
+(9 rows)
+
