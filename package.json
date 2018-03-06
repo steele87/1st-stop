@@ -19,7 +19,9 @@
     "mocha": "^5.0.2"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "psql -f seed/test.marketing-info.sql && mocha spec",
+    "seed": "psql -f seed/marketing-info.sql",
+    "dev": "nodemon listen.js"
   },
   "repository": {
     "type": "git",
