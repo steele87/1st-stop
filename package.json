@@ -1,0 +1,34 @@
+{
+  "name": "1st-stop-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.18.2",
+    "express": "^4.16.2",
+    "nodemon": "^1.17.1",
+    "parser": "^0.1.4",
+    "pg-promise": "^8.1.1",
+    "psql": "^0.0.1",
+    "supertest": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steele87/1st-stop-BE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steele87/1st-stop-BE/issues"
+  },
+  "homepage": "https://github.com/steele87/1st-stop-BE#readme"
+}
