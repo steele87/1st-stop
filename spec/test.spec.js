@@ -16,9 +16,23 @@ describe('update preferences', () => {
       })
       .expect(200)
       .then(res => {
-        console.log(res.body)
         expect(res.body).to.be.an('object');
         expect(res.body.info[0].sms).to.equal('yes');
+      });
+  });
+  it('returns error message if request can not be completed', () => {
+    return request
+      .put('/api/marketing_consent/1665445')
+      .send({
+        'sms': 'yes',
+        'email': 'yes',
+        'telephone': 'yes',
+        'post': 'yes',
+        'id': 'dfsgh'
+      })
+      .expect(400)
+      .then(res => {
+        expect(res.body.message).to.equal('Please ensure a valid ID number is used');
       });
   });
 });
