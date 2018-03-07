@@ -1,9 +1,6 @@
-DROP DATABASE IF EXISTS marketing_info;
-
-CREATE DATABASE marketing_info;
-
-\c marketing_info;
-
+DROP DATABASE IF EXISTS test_marketing_info;
+CREATE DATABASE test_marketing_info;
+\c test_marketing_info;
 CREATE TABLE customer_info
 (
   id SERIAL PRIMARY KEY,
@@ -26,5 +23,9 @@ VALUES
   (167223),
   (164459),
   (165888);
+-- UPDATE customer_info
+-- SET
+--   sms = 'yes', email = 'no', telephone = 'yes', post = 'no'
+-- WHERE customer_id = 168027;
 SELECT *
 FROM customer_info;

@@ -3,7 +3,7 @@ module.exports =
     DB: {
       port: 5432,
       host: 'localhost',
-      database: 'student_database_test',
+      database: 'test_marketing_info',
     },
 
     PORT: 3001
