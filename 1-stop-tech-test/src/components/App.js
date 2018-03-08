@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Checkbox from './Checkbox';
 import '../App.css';
+import addMarketing from '../api';
 
 const items = [
   'sms',
@@ -17,6 +18,8 @@ class App extends Component {
     telephone: 'no',
     post: 'no',
     id: '',
+    updated: false,
+    incorrect: false,
   }
 
   componentWillMount = () => {
@@ -31,23 +34,28 @@ class App extends Component {
     }
   }
 
-  handleFormSubmit = formSubmitEvent => {
-    formSubmitEvent.preventDefault();
-    for (const checkbox of this.selectedCheckboxes) {
-      for(let key in this.state) {
-        if (key === checkbox ) {
-          this.state[key] = 'yes';
-        }
-      }
-    }
-    console.log(this.state)
-    
-  }
-
   changeId = (event) => {
     this.setState({
       id: event.target.value
     })
+  }
+
+  handleFormSubmit = (formSubmitEvent) => {
+    formSubmitEvent.preventDefault();
+    for (const checkbox of this.selectedCheckboxes) {
+      for (let key in this.state) {
+        if (key === checkbox) {
+          this.newMethod()[key] = 'yes';
+        }
+      }
+    }
+    addMarketing(this.state.sms, this.state.email, this.state.telephone, this.state.post, this.state.id)
+    .then(res => {
+      return res.json();
+    })
+    .then(info => 
+    console.log(info.info[0])
+    )
   }
 
   createCheckbox = label => (
@@ -62,6 +70,10 @@ class App extends Component {
     items.map(this.createCheckbox)
   )
 
+  newMethod() {
+    return this.state;
+  }
+
   render() {
     return (
       <div>
@@ -74,11 +86,10 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-
               <form onSubmit={this.handleFormSubmit}>
                 {this.createCheckboxes()}
                 <label>
-                ID: <input type="text" placeholder="ID number" alue={this.state.id} onChange={this.changeId}/>
+                  ID: <input type="text" placeholder="ID number" value={this.state.id} onChange={this.changeId} />
                 </label>
                 <br />
                 <button className="btn btn-default" type="submit">Save</button>
@@ -86,8 +97,6 @@ class App extends Component {
             </div>
           </div>
         </div>
-
-
       </div>
     );
   }
