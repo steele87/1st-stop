@@ -59,9 +59,12 @@ class App extends Component {
         } else return res.json();
       })
       .then(info => {
+        if (info) {
           return this.setState({
-            response: info.info[0]
+            response: info.info[0],
+            updated: true,
           })
+        }
       })
       .then(() => {
         return this.setState({
@@ -113,6 +116,13 @@ class App extends Component {
             </div>
           </div>
         </div>
+
+      <div>
+
+      </div>
+
+
+
       </div>
     );
   }
