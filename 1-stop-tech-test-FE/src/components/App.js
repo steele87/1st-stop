@@ -110,10 +110,12 @@ class App extends Component {
             <div className="col-sm-12">
               <form onSubmit={this.handleFormSubmit}>
                 {this.createCheckboxes()}
+                <hr />
                 <label>
                   ID: <input type="text" placeholder="ID number" value={this.state.id} onChange={this.changeId} />
                 </label>
                 <br />
+                <hr />
                 <button className="btn btn-default" type="submit">Save</button>
               </form>
             </div>
@@ -123,7 +125,9 @@ class App extends Component {
         <div>
           {this.state.updated ?
             <div>
+              <hr />
               <h5>Details successfully updated:</h5>
+              <hr />
               <p>sms: {this.state.response.sms}</p>
               <p>email: {this.state.response.email}</p>
               <p>telephone: {this.state.response.telephone}</p>
