@@ -20,6 +20,7 @@ class App extends Component {
     id: '',
     updated: false,
     incorrect: false,
+    response: 'Please ensure a valid ID number is used',
   }
 
   componentWillMount = () => {
@@ -50,12 +51,26 @@ class App extends Component {
       }
     }
     addMarketing(this.state.sms, this.state.email, this.state.telephone, this.state.post, this.state.id)
-    .then(res => {
-      return res.json();
-    })
-    .then(info => 
-    console.log(info.info[0])
-    )
+      .then(res => {
+        if (res.status === 500 || res.status === 400) {
+          return this.setState({
+            incorrect: true
+          })
+        } else return res.json();
+      })
+      .then(info => {
+          return this.setState({
+            response: info.info[0]
+          })
+      })
+      .then(() => {
+        return this.setState({
+          sms: 'no',
+          email: 'no',
+          telephone: 'no',
+          post: 'no',
+        })
+      })
   }
 
   createCheckbox = label => (
@@ -75,6 +90,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <header >
