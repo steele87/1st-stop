@@ -23,7 +23,8 @@
   "scripts": {
     "test": "mocha spec/*.spec.js",
     "seed": "psql -f seed/marketing-info.sql",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
