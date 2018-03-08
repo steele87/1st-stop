@@ -20,7 +20,7 @@ class App extends Component {
     id: '',
     updated: false,
     incorrect: false,
-    response: 'Please ensure a valid ID number is used',
+    response: 'Sorry the number provided is incorrect. Please ensure a valid ID number is used',
   }
 
   componentWillMount = () => {
@@ -54,15 +54,18 @@ class App extends Component {
       .then(res => {
         if (res.status === 500 || res.status === 400) {
           return this.setState({
-            incorrect: true
+            incorrect: true,
+            updated: false,
+            response: 'Sorry the number provided is incorrect. Please ensure a valid ID number is used',
           })
         } else return res.json();
       })
       .then(info => {
         if (info) {
-          return this.setState({
+          this.setState({
             response: info.info[0],
             updated: true,
+            incorrect: false,
           })
         }
       })
@@ -117,12 +120,27 @@ class App extends Component {
           </div>
         </div>
 
-      <div>
+        <div>
+          {this.state.updated ?
+            <div>
+              <h5>Details successfully updated:</h5>
+              <p>sms: {this.state.response.sms}</p>
+              <p>email: {this.state.response.email}</p>
+              <p>telephone: {this.state.response.telephone}</p>
+              <p>post: {this.state.response.post}</p>
+            </div> :
+            <p></p>
+          }
+        </div>
 
-      </div>
-
-
-
+        <div>
+          {this.state.incorrect ?
+            <div>
+              <h5>{this.state.response}</h5>
+            </div> :
+            <p></p>
+          }
+        </div>
       </div>
     );
   }
