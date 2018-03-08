@@ -96,35 +96,32 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <header >
           <img src="https://www.1ststop.co.uk/home-images/top-logo.png" alt="1st stop logo" />
         </header>
-        <h1>Customer contact preferences</h1>
+        <h1>Customer contact preferences  </h1>
+        <div className="logos"><i className="logo fas fa-mobile fa-3x"></i> <i className="logo fas fa-at fa-3x"></i> <i className="logo fas fa-phone fa-3x"></i> <i className="logo far fa-envelope fa-3x"></i> </div>
         <h4>On occasion we may want to contact you for marketing purposes. Please select your prefered methods of contact and input your unique ID number</h4>
+        <hr />
 
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12">
-              <form onSubmit={this.handleFormSubmit}>
-                {this.createCheckboxes()}
-                <hr />
-                <label>
-                  ID: <input type="text" placeholder="ID number" value={this.state.id} onChange={this.changeId} />
-                </label>
-                <br />
-                <hr />
-                <button className="btn btn-default" type="submit">Save</button>
-              </form>
-            </div>
-          </div>
+        <div>
+          <form onSubmit={this.handleFormSubmit}>
+            {this.createCheckboxes()}
+            <hr />
+            <label>
+              ID: <input className="textBox" type="text" placeholder="ID number" value={this.state.id} onChange={this.changeId} />
+            </label>
+            <br />
+            <hr />
+            <button className="btn btn-default" type="submit">Save</button>
+          </form>
         </div>
 
         <div>
           {this.state.updated ?
-            <div>
+            <div className="valid">
               <hr />
               <h5>Details successfully updated:</h5>
               <hr />
@@ -140,7 +137,7 @@ class App extends Component {
         <div>
           {this.state.incorrect ?
             <div>
-              <h5>{this.state.response}</h5>
+              <h5 className="invalid">{this.state.response}</h5>
             </div> :
             <p></p>
           }

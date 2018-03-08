@@ -5,3 +5,62 @@ body {
   padding: 2%;
   font-family: 'Montserrat', sans-serif;;
 }
+
+h1 {
+  color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+h4 {
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 1%;
+  border-color: rgba(0, 0, 128, 0.425);
+  border-style: solid;
+  padding: 2%;
+}
+.logos {
+  color: navy;
+  padding:1%;
+}
+
+.logo {
+  padding-left: 1%;
+}
+
+img {
+  height: 100%;
+  padding: 5%;
+  align-content: center;
+}
+
+.checkboxes {
+  padding: 1%;
+  color: navy;
+  font-size: 100%;
+}
+
+.btn {
+  width: 10%;
+  height: 10%;
+  padding: 1%;
+  font-size: 100%
+}
+
+.valid {
+  color: green;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 1%;
+  border-color: rgba(0, 0, 128, 0.425);
+  border-style: solid;
+  padding: 2%;
+}
+
+.invalid {
+  color: red;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 1%;
+  border-color: rgba(0, 0, 128, 0.425);
+  border-style: solid;
+  padding: 2%;
+}
