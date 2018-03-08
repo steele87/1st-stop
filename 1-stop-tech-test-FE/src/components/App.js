@@ -122,9 +122,7 @@ class App extends Component {
         <div>
           {this.state.updated ?
             <div className="valid">
-              <hr />
               <h5>Details successfully updated:</h5>
-              <hr />
               <p>sms: {this.state.response.sms}</p>
               <p>email: {this.state.response.email}</p>
               <p>telephone: {this.state.response.telephone}</p>
@@ -136,8 +134,8 @@ class App extends Component {
 
         <div>
           {this.state.incorrect ?
-            <div>
-              <h5 className="invalid">{this.state.response}</h5>
+            <div className="invalid">
+              <h5>{this.state.response}</h5>
             </div> :
             <p></p>
           }
