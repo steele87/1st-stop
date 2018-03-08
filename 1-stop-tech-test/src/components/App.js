@@ -11,6 +11,14 @@ const items = [
 
 class App extends Component {
 
+  state = {
+    sms: 'no',
+    email: 'no',
+    telephone: 'no',
+    post: 'no',
+    id: '',
+  }
+
   componentWillMount = () => {
     this.selectedCheckboxes = new Set();
   }
@@ -27,7 +35,11 @@ class App extends Component {
     formSubmitEvent.preventDefault();
 
     for (const checkbox of this.selectedCheckboxes) {
-      console.log(checkbox, 'is selected.');
+      for(let key in this.state) {
+        if (key === checkbox ) {
+          this.state[key] = 'yes';
+        }
+      }
     }
   }
 
@@ -58,10 +70,10 @@ class App extends Component {
 
               <form onSubmit={this.handleFormSubmit}>
                 {this.createCheckboxes()}
-
+                ID <input type="text" placeholder="ID number"/>
+                <br />
                 <button className="btn btn-default" type="submit">Save</button>
               </form>
-
             </div>
           </div>
         </div>
