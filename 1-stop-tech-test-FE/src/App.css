@@ -49,18 +49,18 @@ img {
 
 .valid {
   color: green;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.836);
   border-radius: 1%;
-  border-color: rgba(0, 0, 128, 0.425);
+  border-color: green;
   border-style: solid;
   padding: 2%;
 }
 
 .invalid {
   color: red;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.836);
   border-radius: 1%;
-  border-color: rgba(0, 0, 128, 0.425);
+  border-color: rgba(255, 0, 0, 0.863);
   border-style: solid;
   padding: 2%;
 }
