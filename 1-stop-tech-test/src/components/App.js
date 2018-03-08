@@ -33,7 +33,6 @@ class App extends Component {
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-
     for (const checkbox of this.selectedCheckboxes) {
       for(let key in this.state) {
         if (key === checkbox ) {
@@ -41,6 +40,14 @@ class App extends Component {
         }
       }
     }
+    console.log(this.state)
+    
+  }
+
+  changeId = (event) => {
+    this.setState({
+      id: event.target.value
+    })
   }
 
   createCheckbox = label => (
@@ -70,7 +77,9 @@ class App extends Component {
 
               <form onSubmit={this.handleFormSubmit}>
                 {this.createCheckboxes()}
-                ID <input type="text" placeholder="ID number"/>
+                <label>
+                ID: <input type="text" placeholder="ID number" alue={this.state.id} onChange={this.changeId}/>
+                </label>
                 <br />
                 <button className="btn btn-default" type="submit">Save</button>
               </form>
