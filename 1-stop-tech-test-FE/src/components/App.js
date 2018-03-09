@@ -117,8 +117,7 @@ class App extends Component {
             <hr />
             <button className="btn btn-default" type="submit">Save</button>
           </form>
-          <br />
-          
+          <br />          
         </div>
 
         <div>

@@ -13,6 +13,20 @@ app.use(cors());
 
 app.use('/api', apiRouter);
 
+apiRouter.route('*/')
+  .get((req, res) => res.status(200).send({status: 'working'}));
+
+app.use('/api/*', (req, res, next) => {
+  const err = new Error('Invalid path');
+  err.statusCode = 404;
+  next(err);
+});
+
+app.use((err, req, res, next) => {
+  res.status(err.statusCode).json({error: err.message, status: err.statusCode});
+  next();
+});
+
 app.listen(PORT, () => { console.log(`listening on ${PORT}...`); });
 
 module.exports = app;
